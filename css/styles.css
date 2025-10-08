@@ -87,7 +87,35 @@ body{
     z-index: 2;
 }
 
-.hero-content h1, .hero-content p{
+.hero-content p{
     margin: 10px 0;
-    color: #f4f4f4;
+    color: #a1d8f5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 2.5rem;
+    font-style: italic;
+    font-family: "Cascadia Code", sans-serif;
+    padding: 0 1em;
+}
+
+/* 🔹 Animación del texto */
+#changing-text {
+  display: inline-block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#changing-text.fade-out {
+  opacity: 0;
+  transform: translateY(-30px); /* se mueve hacia arriba al salir */
+}
+
+#changing-text.fade-in {
+  opacity: 0;
+  transform: translateY(30px); /* arranca más abajo al entrar */
+}
+
+.materias{
+  height: 100vh;
+  background-color: lightslategray;
 }

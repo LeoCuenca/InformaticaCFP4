@@ -1,0 +1,93 @@
+body{
+    background-color: #f4f4f4;
+    color: #222;
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-element a {
+  position: relative;
+  text-decoration: none;
+  color: rgb(149, 149, 149);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* 🔹 Línea que se forma desde el centro */
+.menu-element a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* distancia debajo del texto */
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: teal;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+/* 🔹 Efecto hover */
+.menu-element a:hover {
+  color: teal;
+}
+
+.menu-element a:hover::after {
+  width: 100%; /* la línea se expande desde el centro */
+}
+
+
+.logo{
+    width: 15em;
+}
+
+.hero{
+    position: relative;
+    background-image: url(/images/hero1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(96, 96, 96, 0.206); /* ajustá el 0.55 según el nivel de oscuridad */
+  z-index: 1;
+}
+
+.hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.hero-content h1, .hero-content p{
+    margin: 10px 0;
+    color: #f4f4f4;
+}

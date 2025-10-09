@@ -57,17 +57,45 @@ body{
 }
 
 .hero{
-    position: relative;
-    background-image: url(/images/hero1.webp);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align:center;
-    overflow: hidden;
+  position: relative;
+  background-image: url(/images/hero1.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align:center;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 15px 15px 15px;
+}
+
+/* Forma geométrica 1 - Triángulo grande */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid rgba(93, 103, 161, 0.288);
+  border-bottom: 60vh solid transparent;
+  z-index: 1;
+}
+
+/* Forma geométrica 2 - Triángulo más chico */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 50vw solid rgba(64, 150, 150, 0.288);
+  border-top: 50vh solid transparent;
+  z-index: 1;
 }
 
 .overlay {
@@ -125,7 +153,101 @@ body{
   transform: translateY(30px); /* arranca más abajo al entrar */
 }
 
-.materias{
-  height: 100vh;
-  background-color: lightslategray;
+/*==================================================================================*/
+/* ===== SECCION MATERIAS ===== */
+/*==================================================================================*/
+
+.materias {
+  padding: 4rem 2rem;
+  background: #f7f9fc;
+  text-align: center;
+  color: #333;
+}
+
+.materias-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: teal;
+  opacity: 0.15;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  z-index: 0;
+  border-radius: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.arquitectura::before{
+    background-image: url(/images/hardPic.jpg);
+}
+
+.pensamiento::before{
+  background-image: url(/images/devPic.webp);
+}
+
+.tecnicas::before{
+  background-image: url(/images/devPic.jpg);
+}
+
+.card:hover::before {
+  width: 100%;
+  opacity: 0.3;
+}
+
+.card h3 {
+  position: relative;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: rgb(0, 112, 112);
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(155, 155, 155, 0.445);
+  user-select: none;
+
+}
+
+.card p {
+  position: relative;
+  font-size: 1.1rem;
+  font-weight:bolder;
+  text-shadow: 2px 2px 4px rgb(255, 255, 255);
+  line-height: 1.5;
+  z-index: 1;
+  color: #000000;
+  user-select: none;
+}
+
+/* Hover principal */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 128, 128, 0.2);
 }

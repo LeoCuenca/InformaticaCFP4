@@ -57,45 +57,17 @@ body{
 }
 
 .hero{
-  position: relative;
-  background-image: url(/images/hero1.webp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: calc(100vh - 90px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align:center;
-  overflow: hidden;
-  border-radius: 20px;
-  margin: 0 15px 15px 15px;
-}
-
-/* Forma geométrica 1 - Triángulo grande */
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 100vw solid rgba(93, 103, 161, 0.288);
-  border-bottom: 60vh solid transparent;
-  z-index: 1;
-}
-
-/* Forma geométrica 2 - Triángulo más chico */
-.hero::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-right: 50vw solid rgba(64, 150, 150, 0.288);
-  border-top: 50vh solid transparent;
-  z-index: 1;
+    position: relative;
+    background-image: url(/images/hero1.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    overflow: hidden;
 }
 
 .overlay {
@@ -153,74 +125,7 @@ body{
   transform: translateY(30px); /* arranca más abajo al entrar */
 }
 
-/*==================================================================================*/
-/* ===== SECCION MATERIAS ===== */
-/*==================================================================================*/
-
-.materias {
-  padding: 4rem 2rem;
-  background: #f7f9fc;
-  text-align: center;
-  color: #333;
-}
-
-.materias-title {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-  color: #111;
-}
-
-.cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.card {
-  background: white;
-  padding: 2rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.35s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475'); /*CAMBIAR IMAGEN*/
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 100%;
-  background: teal;
-  opacity: 0.15;
-  transition: all 0.4s ease;
-  transform: translateX(-50%);
-  z-index: 0;
-  border-radius: inherit;
-}
-
-.card:hover::before {
-  width: 100%;
-  opacity: 0.3;
-}
-
-.card h3 {
-  position: relative;
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
-  color: teal;
-  z-index: 1;
-}
-
-/* Hover principal */
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0, 128, 128, 0.2);
+.materias{
+  height: 100vh;
+  background-color: lightslategray;
 }

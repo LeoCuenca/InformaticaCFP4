@@ -8,9 +8,13 @@ body{
 
 .header{
   display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   justify-content: space-around;
   align-items: center;
   height: 80px;
+  background-color: #c8c8c8;
 }
 
 .menu {
@@ -217,6 +221,26 @@ body{
 
 .tecnicas::before{
   background-image: url(/images/devPic.jpg);
+}
+
+.interfaz::before{
+  background-image: url(/images/interfaz.avif);
+}
+
+.basedatos::before{
+  background-image: url(/images/basedatos.jfif);
+}
+
+.fundamentos::before{
+  background-image: url(/images/fundamentosPOO.avif);
+}
+
+.poo{
+
+}
+
+.proyectos{
+
 }
 
 .card:hover::before {

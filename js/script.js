@@ -29,7 +29,6 @@ function cambiarFrase() {
   }, 800); // espera a que termine el fade-out
 }
 
-// Cambia cada 5 segundos
 setInterval(cambiarFrase, 8000);
 
 // Efecto smooth en la pagina
@@ -48,3 +47,16 @@ function raf(time) {
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
+
+// Efecto smooth en las anclas
+// ===========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});

@@ -72,6 +72,32 @@ body{
   margin: 0 15px 15px 15px;
 }
 
+/* Forma geométrica 1 - Triángulo grande */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 100vw solid rgba(93, 103, 161, 0.288);
+  border-bottom: 60vh solid transparent;
+  z-index: 1;
+}
+
+/* Forma geométrica 2 - Triángulo más chico */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-right: 50vw solid rgba(64, 150, 150, 0.288);
+  border-top: 50vh solid transparent;
+  z-index: 1;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -127,8 +153,9 @@ body{
   transform: translateY(30px); /* arranca más abajo al entrar */
 }
 
-
-
+/*==================================================================================*/
+/* ===== SECCION MATERIAS ===== */
+/*==================================================================================*/
 
 .materias {
   padding: 4rem 2rem;
@@ -146,9 +173,9 @@ body{
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -161,6 +188,7 @@ body{
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475'); /*CAMBIAR IMAGEN*/
 }
 
 .card::before {
@@ -189,14 +217,6 @@ body{
   margin-bottom: 0.8rem;
   color: teal;
   z-index: 1;
-}
-
-.card p {
-  position: relative;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  z-index: 1;
-  color: #555;
 }
 
 /* Hover principal */

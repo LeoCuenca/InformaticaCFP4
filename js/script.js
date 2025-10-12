@@ -1,8 +1,8 @@
 const frases = [
-    "Programar no es solo aprender a usar una computadora; es aprender a construir tu propio futuro.",
-    "Hoy puede parecer difícil, pero estás aprendiendo algo que te puede abrir puertas que nunca imaginaste.",
-    "Cada vez que entendés algo nuevo, estás rompiendo una barrera que muchos nunca se animaron a cruzar.",
-    "Aprender informática no es solo aprender de máquinas: es aprender a pensar, a crear, a imaginar lo imposible."
+    "“Programar no es solo aprender a usar una computadora; es aprender a construir tu propio futuro.”",
+    "“Hoy puede parecer difícil, pero estás aprendiendo algo que te puede abrir puertas que nunca imaginaste.”",
+    "“Cada vez que entendés algo nuevo, estás rompiendo una barrera que muchos nunca se animaron a cruzar.”",
+    "“Aprender informática no es solo aprender de máquinas: es aprender a pensar, a crear, a imaginar lo imposible.”"
 ];
 
 const texto = document.getElementById("changing-text");
@@ -60,3 +60,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+// Aparicion del boton para volver al top
+// ======================================
+
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+    } else {
+        scrollTopBtn.classList.remove("show");
+    }
+});
+
+scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+

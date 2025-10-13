@@ -424,14 +424,18 @@ body{
 /*==================================================================================*/
 
 .resources {
-    padding: 2em 10em 0;
-    background: linear-gradient(
-      180deg,
-      #202526 0%,
-      #143164 100%
-    );
-    background-blend-mode: overlay;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 10em 0;
+  background: linear-gradient(
+    180deg,
+    #202526 0%,
+    #143164 100%
+  );
+  background-blend-mode: overlay;
+  text-align: center;
 }
 
 .resources .heading {
@@ -453,12 +457,11 @@ body{
 
 .resources-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 30px;
     justify-content: center;
     align-items: start;
-    max-width: 1200px; /* 3 columnas aprox */
-    margin: 0 auto;
+    max-width: 1500px;
 }
 
 .resource-card {

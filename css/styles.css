@@ -352,7 +352,7 @@ html {
   background-color: #484848;
   box-shadow:  0 0 .5px #0059bf, 0 0 .1px #0059bf, 0 0 10px #0059bf;
   /* color de la línea */
-  margin: 0 1rem;
+  margin: 0 2rem;
   /* espacio entre línea y texto */
 }
 
@@ -438,7 +438,7 @@ html {
 }
 
 .card-title {
-  font-size: calc(1rem + .3vw);
+  font-size: calc(1rem + .2vw);
   color: white;
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
@@ -446,6 +446,7 @@ html {
   padding: 0.5rem 0;
   z-index: 2;
   transition: opacity 0.3s ease;
+  margin-bottom: 10px;
 }
 
 .card p {
@@ -460,7 +461,7 @@ html {
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(26, 26, 26, 0.8);
   color: white;
   display: flex;
   flex-direction: column;
@@ -474,14 +475,30 @@ html {
 }
 
 .card-overlay h3 {
-  font-size: 1.5rem;
+  font-size: calc(1rem + .2vw);
   color: rgb(255, 255, 255);
-  font-weight: 300;
-  background: rgba(0, 0, 0, 0.4);
-  width: 110%;
+  font-weight: 400;
+  background: rgba(78, 98, 96, 0.7);
+  border-radius: 20px;
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
   text-align: center;
   padding: 0.5rem 0;
   margin: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.card-overlay h4{
+  font-size: calc(1rem + .1vw);
+  color: rgb(0, 195, 255);
+  font-weight: 400;
+  margin-top: 1em;
+  background: rgba(0, 0, 0, 0.874);
+  border-radius: 10px;
+  padding: 0.5rem 0;
+  width: 60%;
+  border: 1px solid rgb(0, 229, 255);
   z-index: 2;
   transition: opacity 0.3s ease;
 }
@@ -510,10 +527,14 @@ html {
   justify-content: center;
   align-items: center;
   padding: 2em 10em 0;
-  background: linear-gradient(180deg,
-      #202526 0%,
-      #143164 100%);
   background-blend-mode: overlay;
+  background: linear-gradient(180deg,
+      /* dirección vertical */
+      #d3d3d3 0%,
+      /* color inicial */
+      #a1a1a1 100%
+      /* color final */
+  );
   text-align: center;
 }
 

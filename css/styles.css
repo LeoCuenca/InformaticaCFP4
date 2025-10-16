@@ -8,6 +8,45 @@
   margin: 0;
 }
 
+/*==================================================================================*/
+/* ===== ESTILIOS COMUNES ===== */
+/*==================================================================================*/
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  color: var(--color-titulos)
+}
+
+/* GUION BAJO TITULOS */
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 2px;
+  background-color: #00bfa5;
+  box-shadow:  0 0 .5px #00bfa5, 0 0 .1px #00bfa5, 0 0 10px #00bfa5;
+  margin: 0 auto;
+  margin-top: .4em;
+}
+
+.section-descr {
+  color: var(--color-titulos);
+  font-size: calc(.7rem + .5vw);
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: left;
+  flex-shrink: 0;
+  margin: 1.5em 0;
+}
+
+/*==================================================================================*/
+/* ===== ESTILOS ===== */
+/*==================================================================================*/
+
 body,
 html {
   font-family: "Merriweather", sans-serif;
@@ -79,24 +118,21 @@ html {
 
 .hero {
   position: relative;
-  /* background-image: url(/images/hero1.webp); */
   background-image: url(/images/hero1.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* height: calc(80vh - 90px); */
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  /* border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px; */
   background-color: #ffffff;
 }
 
-/* Forma geométrica 1 - Triángulo grande */
+/* Triangulo */
+
 .hero::before {
   content: "";
   position: absolute;
@@ -169,28 +205,6 @@ html {
   /* arranca más abajo al entrar */
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 400;
-  text-align: center;
-  margin: 0 0 .5em 0;
-  position: relative;
-  color: var(--color-titulos)
-}
-
-/* LINEA PARA LOS TITULOS */
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 250px;
-  height: 2px;
-  background-color: #00bfa5;
-  box-shadow:  0 0 .5px #00bfa5, 0 0 .1px #00bfa5, 0 0 10px #00bfa5;
-  margin: 0 auto;
-  margin-top: .4em;
-}
-
 #scrollTopBtn {
   position: fixed;
   bottom: 30px;
@@ -260,18 +274,13 @@ html {
     );
 }
 
-.main-container {
+.orientacion-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   margin-top: 3em;
-  /* gap: 3em; */
 }
-
-/* .main-container > div{
-  flex: 1;
-} */
 
 .img-container {
   padding: 0 2em 0 3em;
@@ -319,17 +328,6 @@ html {
     );
 }
 
-.mat-description {
-  color: var(--color-titulos);
-  /* font-size: 1.2rem; */
-  font-size: calc(.7rem + .5vw);
-  line-height: 1.5;
-  font-weight: 400;
-  text-align: center;
-  flex-shrink: 0;
-  margin: 0;
-}
-
 /* .anio {
   margin: 2em 0;
 } */
@@ -340,8 +338,16 @@ html {
   font-size: 1.8rem;
   color: var(--color-parrafos);
   text-align: center;
-  margin: 1em 0;
+  margin: 1em
 }
+
+.anio:nth-of-type(1) h2 {
+  margin: 0 0 1em 0;
+}
+
+/* .anio h2:nth-child(1){
+    
+} */
 
 .anio h2::before,
 .anio h2::after {
@@ -360,7 +366,6 @@ html {
   font-size: calc(.7rem + .3vw);
   font-weight: 100;
   line-height: 1.5;
-  text-align: center;
   color: rgb(68, 68, 68);
 }
 
@@ -521,7 +526,7 @@ html {
 /* ===== SECCION RECURSOS ===== */
 /*==================================================================================*/
 
-.resources {
+.recursos {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -538,7 +543,7 @@ html {
   text-align: center;
 }
 
-.resources .heading {
+.recursos .heading {
   font-size: 2rem;
   color: #003366;
   margin-bottom: 10px;

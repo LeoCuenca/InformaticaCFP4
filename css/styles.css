@@ -597,3 +597,24 @@ html {
   font-weight: 600;
   text-transform: none;
 }
+
+/*==================================================================================*/
+/* ===== SECCION CONTACTO ===== */
+/*==================================================================================*/
+
+.contacto form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5em 15em;
+  background-blend-mode: overlay;
+  background: linear-gradient(180deg,
+      /* dirección vertical */
+      #d3d3d3 0%,
+      /* color inicial */
+      #a1a1a1 100%
+      /* color final */
+  );
+  text-align: center;
+}

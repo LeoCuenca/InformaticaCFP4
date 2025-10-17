@@ -34,12 +34,12 @@
     </section>
 
     <section class="orientacion" id="orientacion">
-        <h1 class="section-title">Sobre la orientación</h1>
+        <h1 class="section-title reveal">Sobre la orientación</h1>
         <div class="orientacion-container">
             <div class="img-container">
-                <img src="/images/aula1.jpg" alt="">
+                <img src="/images/aula1.jpg" alt="aula" class="reveal-left" >
             </div>
-            <div class="text-container">
+            <div class="text-container reveal-right">
                 <p class="orientacion-description">La orientación en Informática tiene como propósito formar estudiantes con una sólida base en el campo de las tecnologías de la información y la comunicación.</p>
                 <p class="orientacion-description">A través de una propuesta integral, se articulan saberes de la formación general con contenidos específicos vinculados al hardware, el software, la programación y la gestión de datos.</p>
                 <p class="orientacion-description">Esta orientación habilita a los egresados para continuar estudios superiores en áreas tecnológicas o desempeñarse en el ámbito laboral informático, en tareas relacionadas con el desarrollo, mantenimiento y soporte de sistemas, contribuyendo al fortalecimiento de la innovación y la transformación digital.</p>
@@ -49,13 +49,13 @@
     </section>
 
     <section class="materias" id="materias">
-        <h1 class="section-title">Estructura Curricular</h1>
-        <p class="section-descr">A continuación podés conocer las materias que forman parte de la orientación. Cada una de ellas te permitirá explorar diferentes aspectos del mundo de la informática: desde la comprensión del hardware y la programación, hasta el diseño de interfaces y la gestión de bases de datos. Paso a paso, irás construyendo una formación integral que combina teoría y práctica.</p>
+        <h1 class="section-title reveal">Estructura Curricular</h1>
+        <p class="section-descr reveal">A continuación podés conocer las materias que forman parte de la orientación. Cada una de ellas te permitirá explorar diferentes aspectos del mundo de la informática: desde la comprensión del hardware y la programación, hasta el diseño de interfaces y la gestión de bases de datos. Paso a paso, irás construyendo una formación integral que combina teoría y práctica.</p>
         <div class="anio">
-            <h2>Primer año</h2>
-            <p class="anio-desc">En el primer año, los estudiantes se inician en el mundo de la informática comprendiendo los fundamentos del hardware y la arquitectura de los sistemas. Conocen los componentes de una computadora, su funcionamiento y mantenimiento básico. Además, comienzan a trabajar con herramientas de ofimática y producción de documentos digitales, fortaleciendo sus competencias en el uso responsable y eficiente de las tecnologías.</p>
+            <h2 class="reveal">Primer año</h2>
+            <p class="anio-desc reveal">En el primer año, los estudiantes se inician en el mundo de la informática comprendiendo los fundamentos del hardware y la arquitectura de los sistemas. Conocen los componentes de una computadora, su funcionamiento y mantenimiento básico. Además, comienzan a trabajar con herramientas de ofimática y producción de documentos digitales, fortaleciendo sus competencias en el uso responsable y eficiente de las tecnologías.</p>
             <div class="grid">
-                <div class="card pensamiento">
+                <div class="card pensamiento reveal-left">
                     <div class="card-overlay">
                         <h3>Pensamiento Computacional</h3>
                         <p>A lo largo de esta materia, los estudiantes desarrollan la capacidad de razonar de forma lógica y estructurada, diseñando algoritmos y estrategias para resolver problemas. Se introduce el uso de lenguajes gráficos y el pensamiento algorítmico como base de toda programación.</p>
@@ -64,7 +64,7 @@
                     <h3 class="card-title">Pensamiento Computacional</h3>
                 </div>
 
-                <div class="card arquitectura">
+                <div class="card arquitectura reveal">
                     <div class="card-overlay">
                         <h3>Arquitectura de Sistemas Informáticos</h3>
                         <p>En esta asignatura se aprenden los fundamentos del hardware y el software, comprendiendo cómo interactúan los componentes de una computadora. Se trabaja sobre el reconocimiento, armado y mantenimiento de equipos, instalación de sistemas operativos y medidas básicas de seguridad informática.</p>
@@ -73,7 +73,7 @@
                     <h3 class="card-title">Arquitectura de Sistemas Informáticos</h3>
                 </div>
 
-                <div class="card documentos">
+                <div class="card documentos reveal-right">
                     <div class="card-overlay">
                         <h3>Producción de Documentos</h3>
                         <p>En este espacio se enseña a crear, editar y presentar documentos digitales profesionales. Los alumnos aprenden a combinar texto, imágenes y datos, elaborando presentaciones, planillas y reportes con criterios estéticos y comunicativos claros.</p>
@@ -194,30 +194,65 @@
     </section>
 
     <section class="contacto" id="contacto">
-        <form action="#">
-            <div class="item-container">
-                <label for="text">Ingrese su nombre</label>
-                <input type="text">
+        <h1 class="section-title">Contacto</h1>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
             </div>
-            <div class="item-container">
-                <label for="curso">Ingresa tu curso</label>
-                <select name="curso" id="">
-                    <option value="1">1º</option>
-                    <option value="2">2º</option>
-                    <option value="3">3º</option>
-                    <option value="4">4º</option>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
+            </div>
+
+            <div class="form-group">
+                <label for="curso">Curso</label>
+                <select id="curso" name="curso" required>
+                    <option value="">Seleccioná tu curso</option>
+                    <option value="1ro">1° Año</option>
+                    <option value="2do">2° Año</option>
+                    <option value="3ro">3° Año</option>
+                    <option value="4to">4° Año</option>
                 </select>
             </div>
-            <div class="item-container">
-                <label for="text">Ingrese su nombre</label>
-                <input type="text">
+
+            <div class="form-group full-width">
+                <label for="mensaje">Escribi tu consulta</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu consulta..." required></textarea>
             </div>
-            <div class="item-container">
-                <label for="text">Ingrese su nombre</label>
-                <input type="text">
-            </div>
+
+            <button type="submit" class="btn-enviar">Enviar</button>
         </form>
     </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Instituto Técnico Informático</h3>
+                <p>Formando profesionales en tecnología y desarrollo digital.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces útiles</h4>
+                <ul>
+                    <li><a href="#orientacion">Orientación</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contacto">
+                <h4>Contacto</h4>
+                <p>Email: info@instituto.edu.ar</p>
+                <p>Teléfono: (011) 4567-8901</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Instituto Técnico Informático. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <!-- Boton para volver arriba -->
 

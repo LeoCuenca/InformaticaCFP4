@@ -81,3 +81,21 @@ scrollTopBtn.addEventListener("click", () => {
     });
 });
 
+// INTERSECTION OBSERVER
+// ======================================
+
+document.addEventListener("DOMContentLoaded", () => {
+    const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Agregar la clase visible manteniendo el tipo de animación
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // evita repetir la animación
+            }
+        });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(el => observer.observe(el));
+});

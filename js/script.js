@@ -101,3 +101,39 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+// Abre / cierra el menú
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+  menuToggle.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+});
+
+// Cierra el menú al hacer clic en una opción
+document.querySelectorAll('.menu-element a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('show');
+    menuToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  });
+});
+
+// Cierra el menú al hacer clic fuera de él
+document.addEventListener('click', (e) => {
+  if (
+    menu.classList.contains('show') &&
+    !menu.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    menu.classList.remove('show');
+    menuToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+});
+
+

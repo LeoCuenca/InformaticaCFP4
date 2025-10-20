@@ -86,9 +86,6 @@
     transform: translateX(0); /* vuelve a su posición original */
 }
 
-
-
-
 /*==================================================================================*/
 /* ===== ESTILOS ===== */
 /*==================================================================================*/
@@ -115,6 +112,46 @@ html {
   align-items: center;
   height: 100px;
 }
+
+/* === MENÚ MOBILE === */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  z-index: 100;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Estado activo del botón (animación de cruz) */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ========================= */
 
 .menu {
   list-style: none;
@@ -929,5 +966,42 @@ footer {
   #scrollTopBtn{
     display: none;
   }
+
+  
+
+  .menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgba(20, 20, 20, 0.97);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: top 0.4s ease;
+    padding: 3rem 0;
+    z-index: 90;
+  }
+
+  .menu.show {
+    top: 0;
+  }
+
+  .menu-element a {
+    font-size: 1.5rem;
+    color: #00ffbf;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Evita que el contenido se mueva cuando el menú está abierto */
+  body.menu-open {
+    overflow: hidden;
+  }
+
 
 }

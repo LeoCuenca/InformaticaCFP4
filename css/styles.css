@@ -842,7 +842,7 @@ footer {
 @media (max-width: 430px) {
 
   .section-title {
-    font-size: calc(1.2rem + .3vw);
+    font-size: clamp(1.5rem, .8rem + 2vw, 2.5rem);
     font-weight: bolder;
     margin: 0;
   }
@@ -853,15 +853,16 @@ footer {
 
   .section-descr {
     letter-spacing: .5px;
+    font-size: clamp(1rem, .8rem + .7vw, 2.5rem);
   }
 
   .bright-title{
-    font-size: calc(1rem + .3vw);
-    margin: 0 1.5em;
+    font-size: clamp(1.5rem, .8rem + 2vw, 2.5rem);
+    margin: .5em 1.5em;
   }
 
   .hero-content p {
-    font-size: calc(1rem + .3vw);
+    font-size: clamp(.5rem, .8rem + 2vw, 2.5rem);
     line-height: 1.5;
   }
 
@@ -880,13 +881,17 @@ footer {
     flex-shrink: 0;
   }
 
+  .img-container img {
+    border-radius: 3%;
+  }
+
   .text-container {
     width: auto;
     padding: 1.2em;
   }
 
   .orientacion-description {
-    font-size: calc(.8rem + .3vw);
+    font-size: clamp(1rem, .8rem + 1vw, 2.5rem);
     letter-spacing: .5px;
   }
 
@@ -897,7 +902,7 @@ footer {
   .anio h2 {
     display: flex;
     align-items: center;
-    font-size: calc(1.1rem + .7vw);
+    font-size: clamp(1.2rem, 1rem + 2vw, 2.5rem);
     color: var(--color-parrafos);
     text-align: center;
     margin: 1em
@@ -918,6 +923,7 @@ footer {
   }
 
   .anio-desc{
+    font-size: clamp(.7rem, .8rem + .5vw, 2.5rem);
     letter-spacing: .5px;
   }
 
@@ -926,18 +932,14 @@ footer {
     margin: 1.5em 0;
   }
 
-  .card{
-    height: 250px;
-  }
-
   .card-title {
-    font-size: calc(.8rem + .2vw);
+    font-size: clamp(.5rem, .8rem + 1vw, 2.5rem);
     background: rgba(0, 0, 0, 0.6);
   }
 
   .card-overlay h3 {
-    font-size: calc(.7rem + .2vw);
-    padding: 0.3rem 0;
+    font-size: clamp(.7rem, .8rem + .5vw, 2.5rem);
+    padding: 0.5rem 0;
   }
 
   .card:nth-child(2) .card-overlay{
@@ -945,14 +947,13 @@ footer {
   }
 
   .card p {
-    font-size: calc(.65rem + .1vw);
+    font-size: clamp(.9rem, .7rem + .5vw, 2.5rem);
     line-height: 1.5;
-    /* text-align: left; */
     margin: 1em 0 0 0;
   }
 
   .card-overlay h4{
-    font-size: calc(.65rem + .1vw);
+    font-size: clamp(.5rem, .8rem + .5vw, 2.5rem);
   }
 
   .grid-pad {
@@ -967,7 +968,7 @@ footer {
     display: none;
   }
 
-  
+  /* MENU HAMBURGUESA */
 
   .menu {
     position: fixed;
@@ -981,7 +982,7 @@ footer {
     align-items: center;
     gap: 2rem;
     transition: top 0.4s ease;
-    padding: 3rem 0;
+    padding: 2em 0;
     z-index: 90;
   }
 
@@ -990,8 +991,8 @@ footer {
   }
 
   .menu-element a {
-    font-size: 1.5rem;
-    color: #00ffbf;
+    font-size: clamp(1rem, .8rem + 2vw, 2.5rem);
+    color: #00a6ff;
   }
 
   .menu-toggle {
@@ -1002,6 +1003,21 @@ footer {
   body.menu-open {
     overflow: hidden;
   }
+
+  .recursos{
+    padding: 2em 1em;
+  }
+
+  .heading{
+    font-size: clamp(.5rem, .8rem + .5vw, 2.5rem);
+  }
+
+  .resources-grid{
+    grid-template-columns: repeat(1, minmax(400px, 1fr));
+    width: 100%;
+  }
+
+
 
 
 }

@@ -82,27 +82,32 @@ scrollTopBtn.addEventListener("click", () => {
 });
 
 // INTERSECTION OBSERVER
-// ======================================
+// =====================
 
 document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal-top, .reveal-bot, .reveal-left, .reveal-right");
 
-    const observer = new IntersectionObserver((entries) => {
+    // Detectar si es mobile (menor o igual a 768px)
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    // Cambiar el threshold según el dispositivo
+    const observerOptions = {
+        threshold: isMobile ? 0.2 : 0.6
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Agregar la clase visible manteniendo el tipo de animación
                 entry.target.classList.add("visible");
                 observer.unobserve(entry.target); // evita repetir la animación
             }
         });
-    }, { threshold: 0.6 });
+    }, observerOptions);
 
     reveals.forEach(el => observer.observe(el));
 });
 
-
-
-
+// MENU HAMBURGUESA
 
 const menuToggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('menu');
@@ -134,6 +139,33 @@ document.addEventListener('click', (e) => {
     menuToggle.classList.remove('active');
     document.body.classList.remove('menu-open');
   }
+});
+
+// COPIADO DEL CODIGO DEL CLASSROOM
+
+// Selecciona todos los h3 que tienen la clase 'copiar-codigo'
+const copyHeaders = document.querySelectorAll(".copiar-codigo");
+
+copyHeaders.forEach(h3 => {
+  h3.addEventListener("click", () => {
+    // Buscamos el span dentro del h3
+    const span = h3.querySelector("span");
+    if(span) {
+      const textToCopy = span.textContent;
+
+      // Copiar al portapapeles
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        // Feedback visual opcional
+        const originalText = span.textContent;
+        span.textContent = "¡Copiado!";
+        setTimeout(() => {
+          span.textContent = originalText;
+        }, 1500);
+      }).catch(err => {
+        console.error("Error al copiar al portapapeles: ", err);
+      });
+    }
+  });
 });
 
 

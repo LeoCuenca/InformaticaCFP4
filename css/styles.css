@@ -45,27 +45,38 @@
 
 /* INTERSECTION OBSERVER */
 
-.reveal {
+.reveal-top {
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.8s ease;
+    transition: all 1s ease;
 }
 
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+.reveal-bot {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: all 1s ease;
 }
 
 .reveal-left {
     opacity: 0;
     transform: translateX(-50px); /* empieza a la izquierda */
-    transition: all 0.8s ease;
+    transition: all 1s ease;
 }
 
 .reveal-right {
     opacity: 0;
     transform: translateX(50px); /* empieza a la derecha */
-    transition: all 0.8s ease;
+    transition: all 1s ease;
+}
+
+.reveal-top.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-bot.visible{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Cuando se hace visible */
@@ -74,6 +85,8 @@
     opacity: 1;
     transform: translateX(0); /* vuelve a su posición original */
 }
+
+
 
 
 /*==================================================================================*/
@@ -143,10 +156,6 @@ html {
 .menu-element a:hover::after {
   width: 100%;
   /* la línea se expande desde el centro */
-}
-
-.logo {
-  width: 15em;
 }
 
 .hero {
@@ -243,10 +252,10 @@ html {
   bottom: 30px;
   right: 30px;
   z-index: 1000;
-  background: linear-gradient(135deg, #00bfa5, #101e77);
+  background: linear-gradient(135deg, #7fd4c9, #141a43);
   color: white;
   border: none;
-  border-radius: 50%;
+  border-radius: 25%;
   width: 50px;
   height: 50px;
   font-size: 22px;
@@ -254,7 +263,7 @@ html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity .7s ease, transform .7s ease;
   animation: float 3s ease-in-out infinite;
   /* Propiedad que me permite ocultar realmente el boton, mas alla de su opacidad 0 */
   pointer-events: none;
@@ -387,12 +396,9 @@ html {
   content: "";
   flex: 1;
   height: 2px;
-  /* grosor de la línea */
   background-color: #484848;
   box-shadow:  0 0 .5px #0059bf, 0 0 .1px #0059bf, 0 0 10px #0059bf;
-  /* color de la línea */
   margin: 0 2rem;
-  /* espacio entre línea y texto */
 }
 
 .anio-desc {
@@ -794,4 +800,134 @@ footer {
     .footer-links ul {
         display: inline-block;
     }
+}
+
+@media (max-width: 430px) {
+
+  .section-title {
+    font-size: calc(1.2rem + .3vw);
+    font-weight: bolder;
+    margin: 0;
+  }
+
+  .section-title::after {
+    width: 200px;
+  }
+
+  .section-descr {
+    letter-spacing: .5px;
+  }
+
+  .bright-title{
+    font-size: calc(1rem + .3vw);
+    margin: 0 1.5em;
+  }
+
+  .hero-content p {
+    font-size: calc(1rem + .3vw);
+    line-height: 1.5;
+  }
+
+  .orientacion {
+    display: flex;
+    padding: 2em 0;
+  }
+
+  .orientacion-container {
+    margin-top: 1em;
+    flex-direction: column;
+  }
+
+  .img-container {
+    padding: 0 1.2em;
+    flex-shrink: 0;
+  }
+
+  .text-container {
+    width: auto;
+    padding: 1.2em;
+  }
+
+  .orientacion-description {
+    font-size: calc(.8rem + .3vw);
+    letter-spacing: .5px;
+  }
+
+  .materias {
+    padding: 2em 1em;
+  }
+
+  .anio h2 {
+    display: flex;
+    align-items: center;
+    font-size: calc(1.1rem + .7vw);
+    color: var(--color-parrafos);
+    text-align: center;
+    margin: 1em
+  }
+
+  .anio:nth-of-type(1) h2 {
+    margin: 0 0 1em 0;
+  }
+
+  .anio h2::before,
+  .anio h2::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background-color: #484848;
+    box-shadow:  0 0 .5px #0059bf, 0 0 .1px #0059bf, 0 0 10px #0059bf;
+    margin: 0 .7rem;
+  }
+
+  .anio-desc{
+    letter-spacing: .5px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    margin: 1.5em 0;
+  }
+
+  .card{
+    height: 250px;
+  }
+
+  .card-title {
+    font-size: calc(.8rem + .2vw);
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .card-overlay h3 {
+    font-size: calc(.7rem + .2vw);
+    padding: 0.3rem 0;
+  }
+
+  .card:nth-child(2) .card-overlay{
+    padding: .5em;
+  }
+
+  .card p {
+    font-size: calc(.65rem + .1vw);
+    line-height: 1.5;
+    /* text-align: left; */
+    margin: 1em 0 0 0;
+  }
+
+  .card-overlay h4{
+    font-size: calc(.65rem + .1vw);
+  }
+
+  .grid-pad {
+    padding: 0rem;
+    grid-template-columns: repeat(1, minmax(100px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #scrollTopBtn{
+    display: none;
+  }
+
 }

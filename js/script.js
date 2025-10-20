@@ -85,7 +85,7 @@ scrollTopBtn.addEventListener("click", () => {
 // ======================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    const reveals = document.querySelectorAll(".reveal, .reveal-left, .reveal-right");
+    const reveals = document.querySelectorAll(".reveal-top, .reveal-bot, .reveal-left, .reveal-right");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -95,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(entry.target); // evita repetir la animación
             }
         });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.6 });
 
     reveals.forEach(el => observer.observe(el));
 });
+
+

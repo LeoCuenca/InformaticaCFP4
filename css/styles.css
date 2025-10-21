@@ -310,7 +310,6 @@ html {
 #scrollTopBtn.show {
     opacity: 1;
     transform: translateY(0);
-    /* Invierto la propiedad cuando muestro el boton */
     pointer-events: auto;
 }
 
@@ -329,15 +328,14 @@ html {
     }
 }
 
-/* Efecto hover */
 #scrollTopBtn:hover {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
 
-/*==================================================================================*/
+/*=================================*/
 /* ===== SECCION ORIENTACION ===== */
-/*==================================================================================*/
+/*=================================*/
 
 .orientacion {
     display: flex;
@@ -398,10 +396,9 @@ html {
     opacity: 0;
 }
 
-
-/*==================================================================================*/
+/*==============================*/
 /* ===== SECCION MATERIAS ===== */
-/*==================================================================================*/
+/*==============================*/
 
 .materias {
     display: flex;
@@ -418,10 +415,6 @@ html {
     );
 }
 
-/* .anio {
-  margin: 2em 0;
-} */
-
 .anio h2 {
     display: flex;
     align-items: center;
@@ -434,10 +427,6 @@ html {
 .anio:nth-of-type(1) h2 {
     margin: 0 0 1em 0;
 }
-
-/* .anio h2:nth-child(1){
-    
-} */
 
 .anio h2::before,
 .anio h2::after {
@@ -455,12 +444,6 @@ html {
     line-height: 1.5;
     color: rgb(68, 68, 68);
 }
-
-/* PADDING DESCARTADO -> TODOS LOS ELEMENTOS MENOS EL PRIMERO*/
-
-/* .anio:nth-of-type(n+2) .anio-desc {
-  padding: 0 15%;
-} */
 
 .grid {
     display: grid;

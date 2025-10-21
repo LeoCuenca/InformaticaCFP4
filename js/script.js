@@ -172,3 +172,15 @@ document.querySelectorAll(".copiar-codigo").forEach(h3 => {
         }
     });
 });
+
+//PROBAR PARA QUE NO SE DE VUELTA EN HORIZONTAL
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > window.innerHeight) {
+        // Si está en horizontal
+        document.body.style.width = "430px"; 
+        document.body.style.overflowX = "hidden";
+    } else {
+        document.body.style.width = "100%";
+    }
+});

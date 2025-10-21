@@ -143,29 +143,33 @@ document.addEventListener('click', (e) => {
 
 // COPIADO DEL CODIGO DEL CLASSROOM
 
-// Selecciona todos los h3 que tienen la clase 'copiar-codigo'
-const copyHeaders = document.querySelectorAll(".copiar-codigo");
-
-copyHeaders.forEach(h3 => {
+document.querySelectorAll(".copiar-codigo").forEach(h3 => {
   h3.addEventListener("click", () => {
-    // Buscamos el span dentro del h3
     const span = h3.querySelector("span");
-    if(span) {
+    if (span) {
+      const originalHTML = h3.innerHTML;
       const textToCopy = span.textContent;
 
-      // Copiar al portapapeles
       navigator.clipboard.writeText(textToCopy).then(() => {
-        // Feedback visual opcional
-        const originalText = span.textContent;
-        span.textContent = "¡Copiado!";
+        // Fade out
+        h3.classList.add("fade");
+
+        // Esperar que se desvanezca
         setTimeout(() => {
-          span.textContent = originalText;
+          h3.innerHTML = "¡Copiado!";
+          h3.classList.remove("fade"); // Fade in
+        }, 300);
+
+        // Volver al texto original
+        setTimeout(() => {
+          h3.classList.add("fade");
+          setTimeout(() => {
+            h3.innerHTML = originalHTML;
+            h3.classList.remove("fade");
+          }, 300);
         }, 1500);
-      }).catch(err => {
-        console.error("Error al copiar al portapapeles: ", err);
       });
     }
   });
 });
-
 

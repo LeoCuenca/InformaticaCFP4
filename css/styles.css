@@ -494,39 +494,39 @@ html {
 }
 
 .pensamiento {
-    background-image: url(/images/pensamiento.webp);
+    background-image: url(../images/pensamiento.webp);
 }
 
 .arquitectura {
-    background-image: url(/images/arquitectura.jpg);
+    background-image: url(../images/arquitectura.jpg);
 }
 
 .documentos {
-    background-image: url(/images/produccion.jpeg);
+    background-image: url(../images/produccion.jpeg);
 }
 
 .tecnicas {
-    background-image: url(/images/tecnicas.jpg);
+    background-image: url(../images/tecnicas.jpg);
 }
 
 .interfaz {
-    background-image: url(/images/interfaz.avif);
+    background-image: url(../images/interfaz.avif);
 }
 
 .fundamentos {
-    background-image: url(/images/fundamentosPOO.avif);
+    background-image: url(../images/fundamentosPOO.avif);
 }
 
 .bases {
-    background-image: url(/images/basedatos.jfif);
+    background-image: url(../images/basedatos.jfif);
 }
 
 .poo {
-    background-image: url(/images/poo.jpg);
+    background-image: url(../images/poo.jpg);
 }
 
 .proyectos {
-    background-image: url(/images/fundamentosPOO.avif);
+    background-image: url(../images/fundamentosPOO.avif);
 }
 
 .card-title {

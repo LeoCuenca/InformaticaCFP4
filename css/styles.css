@@ -281,7 +281,6 @@ html {
 #changing-text.fade-in {
     opacity: 0;
     transform: translateY(30px);
-    /* arranca más abajo al entrar */
 }
 
 #scrollTopBtn {
@@ -378,7 +377,6 @@ html {
     font-size: 1.15rem;
     font-weight: 100;
     margin: 0;
-    /* margin: 0 0 1em 0; */
     color: var(--color-titulos)
 }
 
@@ -547,6 +545,8 @@ html {
     transform: translateY(20px);
     transition: all 0.4s ease;
     text-align: center;
+    pointer-events: none; /* al inicio no bloquea */
+    z-index: 2;
 }
 
 .card-overlay h3 {
@@ -565,6 +565,8 @@ html {
 }
 
 .card-overlay h4{
+    display: block;
+    position: relative;
     font-size: calc(1rem + .1vw);
     color: rgb(0, 195, 255);
     font-weight: 400;
@@ -574,8 +576,18 @@ html {
     padding: 0.5rem 0;
     width: 60%;
     border: 1px solid rgb(0, 229, 255);
-    z-index: 2;
+    z-index: 10;
     transition: opacity 0.3s ease;
+    pointer-events: auto;
+}
+
+.card-overlay h4:hover{
+    background-color: rgba(0, 204, 255, 0.466);
+    color: black;
+}
+
+.card-overlay h4 span{
+    color: rgb(0, 255, 238);
 }
 
 /* Efecto hover */
@@ -1028,7 +1040,7 @@ footer {
 
 }
 
-@media (max-width: 430px) {
+@media (max-width: 375px) {
     .resources-grid{
         grid-template-columns: repeat(1, minmax(350px, 1fr));
         min-width: 330px;

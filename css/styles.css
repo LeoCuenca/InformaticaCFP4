@@ -945,7 +945,6 @@ footer {
         height: 350px;
     }
 
-
     .card p {
         font-size: clamp(.9rem, .7rem + .5vw, 2.5rem);
         line-height: 1.5;
@@ -954,6 +953,11 @@ footer {
 
     .card-overlay h4{
         font-size: clamp(.5rem, .8rem + .5vw, 2.5rem);
+    }
+
+    .card.active .card-overlay {
+    opacity: 1;
+    transform: scale(1.05);
     }
 
     .grid-pad {
@@ -1017,8 +1021,12 @@ footer {
     }
 
     .resources-grid{
-        grid-template-columns: repeat(1, minmax(400px, 1fr));
+        grid-template-columns: repeat(1, minmax(360px, 1fr));
         width: 100%;
+    }
+
+    .resource-card iframe {
+        height: 250px;
     }
 
     .contacto{
@@ -1048,13 +1056,12 @@ footer {
     .footer-links ul li{
         margin: 0 .5em;
     }
-
+    
 }
 
 @media (max-width: 375px) {
     .resources-grid{
-        grid-template-columns: repeat(1, minmax(350px, 1fr));
-        min-width: 330px;
+        grid-template-columns: repeat(1, minmax(330px, 1fr));
         width: 100%;
     }
 

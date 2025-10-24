@@ -184,3 +184,14 @@ window.addEventListener('resize', () => {
         document.body.style.width = "100%";
     }
 });
+
+
+
+
+
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('touchstart', () => {
+    card.classList.toggle('active');
+  });
+});

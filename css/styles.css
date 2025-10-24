@@ -955,11 +955,6 @@ footer {
         font-size: clamp(.5rem, .8rem + .5vw, 2.5rem);
     }
 
-    .card.active .card-overlay {
-    opacity: 1;
-    transform: scale(1.05);
-    }
-
     .grid-pad {
         padding: 0rem;
         grid-template-columns: repeat(1, minmax(100px, 1fr));

@@ -184,24 +184,3 @@ window.addEventListener('resize', () => {
         document.body.style.width = "100%";
     }
 });
-
-
-
-// Solo en dispositivos táctiles
-if ('ontouchstart' in window) {
-  document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('touchstart', (e) => {
-      // Si ya está activa, la desactiva
-      if (card.classList.contains('active')) {
-        card.classList.remove('active');
-      } else {
-        // Quita el "active" de las otras cards
-        document.querySelectorAll('.card.active').forEach(c => c.classList.remove('active'));
-        // Activa la actual
-        card.classList.add('active');
-      }
-      // Previene que el toque dispare un clic accidental
-      e.preventDefault();
-    });
-  });
-}

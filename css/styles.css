@@ -595,10 +595,19 @@ html {
 }
 
 /* Efecto hover */
-.card:hover .card-overlay {
+.card:hover .card-overlay,
+.card.active .card-overlay {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+/* Hover real solo para dispositivos con mouse */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card-overlay {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .card:hover .card-title {

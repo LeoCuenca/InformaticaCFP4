@@ -520,6 +520,7 @@ html {
     z-index: 2;
     transition: opacity 0.3s ease;
     margin-bottom: 10px;
+    pointer-events: auto;
 }
 
 .card p {
@@ -546,7 +547,7 @@ html {
     transition: all 0.4s ease;
     text-align: center;
     pointer-events: none; /* al inicio no bloquea */
-    z-index: 2;
+    z-index: 3;
 }
 
 .card-overlay h3 {
@@ -594,10 +595,12 @@ html {
 .card:hover .card-overlay {
     opacity: 1;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 .card:hover .card-title {
     opacity: 0;
+    pointer-events: none;
 }
 
 .card:hover {

@@ -288,20 +288,20 @@ html {
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    background: linear-gradient(135deg, #7fd4c9, #141a43);
-    color: white;
+    background-image: url('../images/flecha.png');
+    background-size: cover; /* ajusta la imagen al botón */
+    background-repeat: no-repeat;
+    background-position: center;
     border: none;
-    border-radius: 25%;
+    background-color: transparent;
     width: 50px;
     height: 50px;
-    font-size: 22px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    filter: drop-shadow(5px 5px 5px #000000);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity .7s ease, transform .7s ease;
     animation: float 3s ease-in-out infinite;
-    /* Propiedad que me permite ocultar realmente el boton, mas alla de su opacidad 0 */
     pointer-events: none;
 }
 
@@ -472,6 +472,12 @@ html {
     justify-content: center;
     transition: transform 0.3s ease;
     width: 100%;
+}
+
+.card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3){
+    height: 400px;
 }
 
 .pensamiento {
@@ -834,7 +840,7 @@ footer {
 @media (max-width: 430px) {
 
     .section-title {
-        font-size: clamp(1.5rem, .8rem + 2vw, 2.5rem);
+        font-size: clamp(1.5rem, .8rem + 1vw, 2rem);
         font-weight: bolder;
         margin: 0;
     }

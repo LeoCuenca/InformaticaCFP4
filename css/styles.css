@@ -297,10 +297,9 @@ html {
     width: 50px;
     height: 50px;
     cursor: pointer;
-    filter: drop-shadow(5px 5px 5px #000000);
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity .7s ease, transform .7s ease;
+    transition: filter .5s ease;
     animation: float 3s ease-in-out infinite;
     pointer-events: none;
 }
@@ -328,8 +327,8 @@ html {
 }
 
 #scrollTopBtn:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05);
+    filter: drop-shadow(5px 5px 5px #000000);
+    transition: filter .5s ease;
 }
 
 /*=================================*/
@@ -474,10 +473,8 @@ html {
     width: 100%;
 }
 
-.card:nth-child(1),
-.card:nth-child(2),
-.card:nth-child(3){
-    height: 400px;
+.materias .anio:nth-of-type(1) .card{
+    height: 375px;
 }
 
 .pensamiento {
@@ -943,6 +940,11 @@ footer {
     .card:nth-child(2) .card-overlay{
         padding: .5em;
     }
+
+    .materias .anio:nth-of-type(1) .card{
+        height: 350px;
+    }
+
 
     .card p {
         font-size: clamp(.9rem, .7rem + .5vw, 2.5rem);

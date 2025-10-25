@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 /*==================================================================================*/
@@ -455,7 +456,6 @@ html {
     gap: 3rem;
     align-items: center;
     justify-items: center;
-
 }
 
 .card {
@@ -549,7 +549,6 @@ html {
     transform: translateY(20px);
     transition: all 0.4s ease;
     text-align: center;
-    pointer-events: none; /* al inicio no bloquea */
     z-index: 3;
 }
 
@@ -598,12 +597,10 @@ html {
 .card:hover .card-overlay {
     opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
 .card:hover .card-title {
     opacity: 0;
-    pointer-events: none;
 }
 
 .card:hover {
@@ -1054,7 +1051,7 @@ footer {
     
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
     .resources-grid{
         grid-template-columns: repeat(1, minmax(330px, 1fr));
         width: 100%;
@@ -1065,7 +1062,7 @@ footer {
     }
 
     footer{
-        padding: 40px 0;
+        padding: 20px 0;
     }
 
     .footer-links ul{
@@ -1080,4 +1077,5 @@ footer {
     .footer-bottom{
         margin-top: 20px;
     }
+
 }

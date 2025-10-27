@@ -48,6 +48,11 @@ function raf(time) {
 }
 requestAnimationFrame(raf);
 
+document.querySelectorAll("iframe").forEach(iframe => {
+    iframe.addEventListener("mouseenter", () => lenis.stop());
+    iframe.addEventListener("mouseleave", () => lenis.start());
+});
+
 // Efecto smooth en las anclas
 // ===========================
 

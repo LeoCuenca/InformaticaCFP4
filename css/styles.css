@@ -838,7 +838,7 @@ footer {
 
 @media screen and (orientation: landscape) and (max-width: 768px) {
     body {
-        max-width: 430px;
+        max-width: 500px;
         margin: 0 auto;
         overflow-x: hidden;
     }
@@ -877,7 +877,7 @@ footer {
 
 }
 
-@media (max-width: 430px) {
+@media (max-width: 500px) {
 
     .section-title {
         margin: 0;
